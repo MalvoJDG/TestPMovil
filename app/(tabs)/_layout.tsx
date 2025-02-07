@@ -1,6 +1,9 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform } from 'react-native';
+import { Linking, Platform } from 'react-native';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Entypo from '@expo/vector-icons/Entypo';
+import Octicons from '@expo/vector-icons/Octicons';
 
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -34,10 +37,37 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="multiplicadora"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Multiplicadora',
+          tabBarIcon: ({ color }) => <Entypo name="squared-cross" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name= 'sumadora'
+        options={{
+          title: 'Sumadora',
+          tabBarIcon: ({ color }) => <AntDesign name="pluscircle" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name= 'traductora'
+        options={{
+          title: 'Traductora',
+          tabBarIcon: ({ color }) => <Octicons name="number" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="video"
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            Linking.openURL('https://youtu.be/ifWBwBE0MJE?si=mxPYsjm1lVHEsyUZ');
+          },
+        }}
+        options={{
+          title: 'Video',
+          tabBarIcon: ({ color }) => <AntDesign name="youtube" size={24} color="red" />,
         }}
       />
     </Tabs>
