@@ -59,12 +59,6 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="video"
-        listeners={{
-          tabPress: (e) => {
-            e.preventDefault();
-            Linking.openURL('https://youtu.be/ifWBwBE0MJE?si=mxPYsjm1lVHEsyUZ');
-          },
-        }}
         options={{
           title: 'Video',
           tabBarIcon: ({ color }) => <AntDesign name="youtube" size={24} color="red" />,
